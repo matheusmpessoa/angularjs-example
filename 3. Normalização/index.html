@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Example</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <!-- AngularJS -->
+        <script src="../angular.min.js"></script>
+    </head>
+
+    <body>
+        <h1>3. Normalização</h1><br>
+        
+        <!-- Normalização pode ser aplicado de diferentes formas:
+        Inserir x- e data- na frente do elemento/atributo
+        Converter o :, -, ou _ delimita o nome ao camelCase -->
+        
+        Hello <input ng-model="name"><br>
+        <span ng-bind="name"></span><br>
+        <span ng:bind="name"></span><br/>
+        <span ng_bind="name"></span><br>
+        <span data-ng-bind="name"></span><br>
+        <span x-ng-bind="name"></span><br>
+    </body>
+</html>

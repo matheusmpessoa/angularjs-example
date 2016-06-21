@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Example</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <!-- AngularJS -->
+        <script src="../angular.min.js"></script>
+    </head>
+
+    <body ng-controller="mainCtrl">
+        <h1>6. Filters</h1><br>
+        
+        <div class="name">
+            Nome: <input type="text" ng-model="name"><br>
+            {{name | uppercase}}<br>
+            {{name | lowercase}}<br>
+        </div>
+        <div class="price">
+            Preço: <input type="text" ng-model="price"><br>
+            {{price | currency}}<br>
+            {{price | currency: "R$ "}}<br>
+            {{price | currency: "R$ ":0}}<br><!--Insere um zero a mais após a virgula-->
+            {{price | currency: "R$ ":5}}<br><!--Insere cinco zero a mais após a virgula-->
+        </div>
+    </body>
+</html>

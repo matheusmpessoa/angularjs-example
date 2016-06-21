@@ -7,3 +7,4 @@ Aplicações AngularJS para exemplo.
 2. ng-model e ng-bind
 3. Normalização
 4. ng-repeat
+5. Controllers

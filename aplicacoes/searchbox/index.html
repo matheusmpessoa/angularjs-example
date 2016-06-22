@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Example</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <!-- AngularJS -->
+        <script src="../angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+        <h1>searchbox</h1><br>
+
+        <p>Filtrar um array através de um input.</p>
+        <div ng-controller="people">
+            <ul>
+                <li ng-repeat="person in persons | filter:globalSearch">
+                    {{ "Name: " + person.Name + " Age: " + person.Age + " Fav color: " + person.Fav_color }}
+                </li>
+            </ul>
+        </div>
+        <div id="searchBoxes">
+            <p>Pesquisar por:</p>
+            <label>Global:<input type="text" ng-model="globalSearch.$"></label><br>
+            <label>Nome:<input type="text" ng-model="globalSearch.Name"></label><br>
+            <label>Idade<input type="text" ng-model="globalSearch.Age"></label><br>
+            <label>Cor favorita<input type="text" ng-model="globalSearch.Fav_color"></label>
+        </div>
+    </body>
+</html>

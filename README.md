@@ -2,9 +2,6 @@
 Aplicações em AngularJS para exemplo.
 
 ## Aplicações contidas neste repositório
-
-
-
 - $httpservice
 - controllers
 - filters
@@ -16,3 +13,4 @@ Aplicações em AngularJS para exemplo.
 - normalizacao
 - routing
 - routing-2
+- searchbox

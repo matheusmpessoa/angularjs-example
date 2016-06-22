@@ -10,22 +10,116 @@
 
         <!-- AngularJS -->
         <script src="../angular.min.js"></script>
+        <script src="app.js"></script>
+
+        <style>
+            p {
+                margin: 15px 0px 0px 0px;
+                color: dodgerblue;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+        </style>
     </head>
 
-    <body ng-controller="mainCtrl">
-        <h1>filters</h1><br>
+    <body ng-controller="myCtrl">
+        <div class="container">
+            <h1>filters</h1>
 
-        <div class="name">
-            Nome: <input type="text" ng-model="name"><br>
-            {{name | uppercase}}<br>
-            {{name | lowercase}}<br>
-        </div>
-        <div class="price">
-            Preço: <input type="text" ng-model="price"><br>
-            {{price | currency}}<br>
-            {{price | currency: "R$ "}}<br>
-            {{price | currency: "R$ ":0}}<br><!--Insere um zero a mais após a virgula-->
-            {{price | currency: "R$ ":5}}<br><!--Insere cinco zero a mais após a virgula-->
-        </div>
+            <nav>
+                <ul>
+                    <li><a href="#name">uppercase / lowercase</a></li>
+                    <li><a href="#price">currency</a></li>
+                    <li><a href="#date">date</a></li>
+                    <li><a href="#filtro">filter</a></li>
+                </ul>
+            </nav>
+            <hr>
+            <div id="name" ng-init="nomeInit()">
+                <h2>Uppercase / lowercase</h2>
+
+                <label>Insira um nome: <input type="text" ng-model="name"></label>
+
+                <p>Nome no formato normal.</p>
+                <span ng-bind="name"></span>
+
+                <p>Nome com caixa baixa.</p>
+                <span ng-bind="name | lowercase"></span>
+
+                <p>Nome com caixa alta.</p>
+                <span ng-bind="name | uppercase"></span>
+            </div>
+            <hr>
+            <div id="price" ng-init="priceInit()">
+                <h2>Price</h2>
+
+                <label>Insira um preço: <input type="number_format" ng-model="price"></label>
+
+                <p>Data no formato normal.</p>
+                <span ng-bind="price | currency"></span>
+
+                <p>Data no formato normal.</p>
+                <span ng-bind="price | currency: 'R$ '"></span>
+
+                <p>Acrescenta cinco zeros após a virgula.</p>
+                <span ng-bind="(price | currency:'R$ ':5)"></span>
+            </div>
+            <hr>
+            <div id="date" ng-init="todayInit()">
+                <h2>Date</h2>
+
+                <p>Data no formato normal.</p>
+                <span ng-bind="today | date"></span>
+
+                <p>Data com: dia, mês e ano.</p>
+                <span ng-bind="today | date : 'dd.MM.y'"></span><br>
+                <span ng-bind="today | date : 'dd.MM.yy'"></span><br>
+                <span ng-bind="today | date : 'yyyy.dd.MM'"></span>
+
+                <p>Data com: dia, mês e ano e hora completa.</p>
+                <span ng-bind="today | date : 'dd.MM.y HH:mm:ss'"></span>
+
+                <p>Timezone (-1200 até +1200).</p>
+                <span ng-bind="today | date : 'dd.MM.y HH:mm:ss Z'"></span>
+
+                <p>Valores pré-definidos.</p>
+                <span ng-bind="today | date : 'short'"></span><br><!-- M/d/yy h:mm a -->
+                <span ng-bind="today | date : 'medium'"></span><br><!-- MMM d, y h:mm:ss a -->
+                <span ng-bind="today | date : 'shortDate'"></span><br><!-- M/d/yy -->
+                <span ng-bind="today | date : 'mediumDate'"></span><br><!-- MMM d, y -->
+                <span ng-bind="today | date : 'longDate'"></span><br><!-- MMMM d, y -->
+                <span ng-bind="today | date : 'fullDate'"></span><br><!-- EEEE, MMMM d, y -->
+                <span ng-bind="today | date : 'shortTime'"></span><br><!-- h:mm a-->
+                <span ng-bind="today | date : 'mediumTime'"></span><!-- h:mm:ss a -->
+            </div>
+            <hr>
+            <div id="filtro">
+                <h2>Filtro</h2>
+
+                <div ng-init="filtroInit()">
+                    <p>Filtrar um array através de um input.</p>
+                    <label><input type="text" ng-model="filtro"></label>
+                    <ul>
+                        <li ng-repeat="filtro in times | filter:filtro">
+                            <span ng-bind="filtro"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-init="filterTableInit()">
+                    <p>Ordenando em ordem alfabética um array através de um clique.</p>
+                    <table width="50%" class="table-bordered">
+                        <tr>
+                            <th ng-click="orderByMe('name')">Cidades</th>
+                            <th ng-click="orderByMe('estados')">Estados</th>
+                        </tr>
+                        <tr ng-repeat="info in cidades | orderBy:myOrderBy">
+                            <td><span ng-bind="info.name"></span></td>
+                            <td><span ng-bind="info.estados"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div><!-- Fim container -->
     </body>
 </html>

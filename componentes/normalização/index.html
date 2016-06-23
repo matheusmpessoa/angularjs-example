@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="myApp">
     <head>
         <meta charset="utf-8">
         <title>AngularJS Example</title>
@@ -9,17 +9,18 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
         <!-- AngularJS -->
-        <script src="../angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="app.js"></script>
     </head>
 
-    <body>
-        <h1>3. Normalização</h1><br>
+    <body ng-controller="myCtrl">
+        <h1>normalizacao</h1><br>
 
         <!-- Normalização pode ser aplicado de diferentes formas:
         Inserir x- e data- na frente do elemento/atributo
         Converter o :, -, ou _ delimita o nome ao camelCase -->
 
-        Hello <input ng-model="name"><br>
+        <p>Hello</p>
         <span ng-bind="name"></span><br>
         <span ng:bind="name"></span><br/>
         <span ng_bind="name"></span><br>

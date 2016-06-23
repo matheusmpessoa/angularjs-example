@@ -9,18 +9,20 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
         <!-- AngularJS -->
-        <script src="../angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="app.js"></script>
     </head>
 
     <body>
-        <h1>ng-repeat</h1><br>
+        <h1>$http service</h1><br>
 
-        <div ng-controller="mainController">
-            <p ng-repeat="language in myFavLan">
-                <span ng-bind="language.name"></span>
-                <span ng-bind="language.extension"></span>
-            </p>
+        <div ng-controller="people">
+            <ul>
+                <h2>Nome e idade de amigos:</h2>
+                <li ng-repeat="person in persons">
+                    Nome: {{person.Name + ' - ' + 'Idade: ' + person.Age}}
+                </li>
+            </ul>
         </div>
     </body>
 </html>

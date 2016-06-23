@@ -10,13 +10,20 @@
 
         <!-- AngularJS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-        <script src="angular-route.min.js"></script>
         <script src="app.js"></script>
     </head>
 
     <body>
-        <h1>login</h1><br>
+        <h1>factory</h1><br>
 
-        <div ng-view></div>
+        <div class="container" ng-controller="myFactoryCtrl">
+            <p>Adicionando Module, Controller e Factory</p>
+            <ul>
+                <li ng-repeat="art in artists">
+                    <span ng-bind="art.name"></span> -
+                    <span ng-bind="art.band"></span>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

@@ -11,11 +11,13 @@ Aplicações em AngularJS para exemplo.
 - componentes
     - $httpservice
     - controllers
+    - data-between-scopes
     - factory
     - filters
     - ng-bind
     - ng-include
     - ng-repeat
     - normalizacao
+    - range-based-loops
     - routing
     - routing-2

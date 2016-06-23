@@ -21,3 +21,5 @@ Aplicações em AngularJS para exemplo.
     - range-based-loops
     - routing
     - routing-2
+    - scope-digest
+    - scope-watch

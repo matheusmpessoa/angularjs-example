@@ -12,8 +12,9 @@ Aplicações em AngularJS para exemplo.
     - $httpservice
     - controllers
     - data-between-scopes
-    - factory
+    - factories
     - filters
+    - module-controller-factory
     - ng-bind
     - ng-include
     - ng-repeat
@@ -23,3 +24,4 @@ Aplicações em AngularJS para exemplo.
     - routing-2
     - scope-digest
     - scope-watch
+    - services

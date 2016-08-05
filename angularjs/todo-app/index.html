@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Example</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+        <h1>todo-app</h1>
+        <br>
+
+        <div ng-controller="myCtrl">
+            <h2 style="text-align:center;">Add a Task</h2>
+            <input type="text" class="form-control" style="display: block;margin:0 auto;padding:5px;font-size:15px;width:300px;" ng-keyup="searchEnter()" ng-model="task">
+        </div>
+    </body>
+</html>
